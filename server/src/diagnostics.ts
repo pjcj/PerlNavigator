@@ -170,7 +170,7 @@ export async function perlcritic(textDocument: TextDocument, workspaceFolders: W
     const diagnostics: Diagnostic[] = [];
     let output: string;
     try {
-        const process = async_execFile(settings.perlPath, criticParams, { timeout: 25000 });
+        const process = async_execFile(settings.perlPath, criticParams, { timeout: 75000 });
         process?.child?.stdin?.on("error", (error: any) => {
             nLog("Perl Critic Error Caught: ", settings);
             nLog(error, settings);
